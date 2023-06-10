@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Appointment Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333333;
+      text-align: center;
+    }
+
+    .confirmation {
+      margin: 30px auto;
+      max-width: 400px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .confirmation p {
+      margin-bottom: 10px;
+    }
+
+    .booking-details {
+      margin-top: 20px;
+      border-top: 1px solid #cccccc;
+      padding-top: 20px;
+    }
+
+    .booking-details p {
+      margin-bottom: 5px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 14px;
+      border-radius: 4px;
+      background-color: #0D23ED;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .buttons button:hover {
+      background-color: #0D23ED;
+    }
+  </style>
+</head>
+<body>
+  <div class="confirmation">
+    <h1>Appointment Confirmed</h1>
+    <p>Thank you for booking an appointment!</p>
+
+    <div class="booking-details">
+      <p><strong>Booking Number:</strong> <span id="booking-number"></span></p>
+      <p><strong>Date:</strong> <span id="booking-date"></span></p>
+      <p><strong>Time:</strong> <span id="booking-time"></span></p>
+      <p><strong>Service:</strong> <span id="booking-service"></span></p>
+      <p><strong>Expert:</strong> <span id="booking-expert"></span></p>
+    </div>
+
+    <div class="buttons">
+      <button id="cancel-btn">Cancel Booking</button>
+      <button id="modify-btn">Modify Booking</button>
+    </div>
+  </div>
+
+  <script>
+    function getQueryParams() {
+      var queryParams = {};
+      var search = window.location.search.substring(1);
+      var pairs = search.split('&');
+      for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i].split('=');
+        if (pair[0]) {
+          queryParams[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+        }
+      }
+      return queryParams;
+    }
+
+
+    var queryParams = getQueryParams();
+    var service = queryParams['service'];
+    var expert = queryParams['expert'];
+    var time = queryParams['time'];
+    var date = queryParams['date'];
+
+
+
+    document.getElementById('booking-number').textContent = generateBookingNumber();
+
+
+    document.getElementById('booking-service').textContent = service;
+    document.getElementById('booking-expert').textContent = expert;
+    document.getElementById('booking-time').textContent = time;
+    document.getElementById('booking-date').textContent = date;
+
+
+
+
+    function generateBookingNumber() {
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+      var bookingNumber = '';
+      for (var i = 0; i < 8; i++) {
+        bookingNumber += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return bookingNumber;
+    }
+
+
+    document.getElementById('cancel-btn').addEventListener('click', function() {
+      alert('Booking has been canceled.');
+    });
+
+    document.getElementById('modify-btn').addEventListener('click', function() {
+      alert('Booking modification page will open.');
+    });
+  </script>
+</body>
+</html>
