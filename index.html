@@ -13,8 +13,37 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Advanced Laser Clinic</title>
+    <title>Advanced Laser Clinik</title>
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const serviceCards = document.querySelectorAll('.service-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Toggle active class
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const selectedFilter = btn.getAttribute('data-filter');
+
+            serviceCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+
+                if (selectedFilter === "all" || category === selectedFilter) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    });
+});
+</script>
+
+
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
 
@@ -24,7 +53,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-auto">
-                    <p> <a href="#" class = "top-link"><i class='bx bxs-envelope'></i> bedijatinder@gmail.com</p></a>
+                    <p> <a href="#" class = "top-link"><i class='bx bxs-envelope'></i> advancedlaserc.sk@gmail.com</p></a>
                     <p> <a href="#" class = "top-link"><i class='bx bxs-phone-call'></i> 306-612-1489</p></a>
                 </div>
                 <div class="col-auto social-icons">
@@ -86,7 +115,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-10 offset-lg-1 text-white">
-                        <h1 class="display-3 my-4">Advanced Laser Clinic</h1>
+                        <h1 class="display-3 my-4">Advanced Laser Clinik</h1>
                         <h6 class="text-white text-uppercase">Advanced Technology, Trusted Results</h6>
                         
                         <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-brand">Request Appointment</a>
@@ -100,63 +129,29 @@
     <!-- ABOUT -->
     <section id="about">
         <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="intro text-center">
+                        <h1>About Us</h1>
+                    </div>
+                </div>
+            </div>
             <div class="row justify-content-center">
-                <div class="col-lg-5 py-5">
+                <div class="col-lg-5">
                     <div class="row">
-
                         <div class="col-12">
                             <div class="info-box">
                                 <div class="ms-4">
-                                    <h1>About Us</h1>
-                                    <p>Our team dedicates themselves to providing you with the exceptional service and dental care you deserve. With over ten years of service in the city of Ottawa and the surrounding areas, our dental team prides themselves in the positive impact we’ve made on our patients and in our community. </p>
+                                    <p>At Advanced Laser Clinic, we specialize exclusively in advanced laser hair removal  because smooth, radiant skin is more than a luxury; it’s a lifestyle. Located in the heart of Saskatoon, our clinic is committed to providing safe, effective, and virtually painless hair removal using the latest Soprano ICE  Diode Laser Technology, suitable for all skin types.
+                                        Our mission is to help you feel confident in your skin through personalized, professional care. Whether you're looking for a long-term solution to unwanted hair or simply want to treat yourself to a brighter, cleaner look, our certified technicians are here to guide you every step of the way.
+                                        We proudly serve women, men, couples, and seniors, with tailored packages to suit your needs. At Advanced Laser Clinic, we don’t just remove hair—we help you reveal your best self.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <img src="img/team.webp" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="intro">
-                        <h1>Our Services</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service">
-                        <img src="img/general.png" alt="">
-                        <h5>General Dentistry</h5>
-                        <p>General dentistry seeks to improve the oral health of patients, work towards the prevention of future oral health concerns and helps patients with the appearance of their smile</p>
-                        <h7>Estimated price: $400 per tooth</h7><br><br>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-brand ms-lg-3">Book an appointment</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service">
-                        <img src="img/cosmetic.png" alt="">
-                        <h5>Cosmetic Dentistry</h5>
-                        <p>Cosmetic Dentistry primarily focuses on improvement in dental aesthetics in color, position, shape, size, alignment and overall smile appearance</p>
-                        <h7>Estimated price: $600 per tooth</h7><br><br>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-brand ms-lg-3">Book an appointment</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service">
-                        <img src="img/restorative.png" alt="">
-                        <h5>Restorative Dentistry</h5>
-                        <p>Restorative dentistry aims to manage diseases of the teeth and their supporting structures and the rehabilitation of the dentition to functional and aesthetic requirements of the individual.</p>
-                        <h7>Estimated price: $750 per tooth</h7><br><br>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-brand ms-lg-3">Book an appointment</a>
-                    </div>
+                    <iframe class="video" src="https://www.youtube.com/embed/2r-1POLnMA0?si=Zy9_wD41dn0TBQsX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -166,69 +161,152 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="intro">
-                        <h1>Locations</h1>
+                    <div class="intro text-center">
+                        <h1>Location</h1>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <div class="content">
-                        <h4><center>Alta vista</center></h4>
-                        <h6>Address: </h6>
-                        <h7>2637 Alta Vista Drive<br>
-                            Ottawa, Ontario, K1V 7T5</h7><br><br>
-                        <h6>Reach us at: </h6>
-                        <h7>Phone: (613) 733-0909<br>
-                            Email: altavista@trilliumdental.ca</h7><br><br>
-                        <h6>Hours: </h6>
-                        <h7>Monday, Tuesday, Thursday 8:00am – 5:00pm<br>
-                            Wednesday 8:00am – 9:00pm<br>
-                            Friday 8:00am – 1:00pm</h7><br><br>
-                            <center><iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89599.72540649766!2d-75.74042718389147!3d45.429674317848615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce08aecc89dfb7%3A0x31ee483c3fb2ab21!2sTrillium%20Dental%20-%20Alta%20Vista!5e0!3m2!1sen!2sca!4v1686181443663!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center>    
-                    </div>
-                </article>
-                
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <article class="blog-post">
+                        <div class="content">
+                            <h4 class="text-center">Saskatoon</h4>
+                            <h6>Address:</h6>
+                            <p>310 Wall St<br>
+                                Saskatoon, SK, S7K 1N7</p><br>
+                            <h6>Reach us at:</h6>
+                            <p>Phone: 306-612-1489<br>
+                                Email: advancedlaserc.sk@gmail.com</p><br>
+                            <h6>Hours:</h6>
+                            <p>
+                                Monday, Tuesday, Thursday: 8:00am – 5:00pm<br>
+                                Wednesday: 8:00am – 9:00pm<br>
+                                Friday: 8:00am – 1:00pm
+                            </p><br>
+                            <div class="text-center">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.0777994993337!2d-106.67094518709801!3d52.1329062718454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5304f6d90219c3bb%3A0x13724702f94a4f9e!2s310%20Wall%20St%2C%20Saskatoon%2C%20SK%20S7K%201N7!5e0!3m2!1sen!2sca!4v1751047693037!5m2!1sen!2sca" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="col-md-4">
-            <article class="blog-post">
-                <div class="content">
-                    <h4><center>Bayshore Mall</center></h4>
-                    <h6>Address: </h6>
-                    <h7>100 Bayshore Drive, Second Floor<br>
-                        Nepean, Ontario K2B 8C1</h7><br><br>
-                    <h6>Reach us at: </h6>
-                    <h7>Phone: (613) 726-1116<br>
-                        Email: bayshore@trilliumdental.ca</h7><br><br>
-                    <h6>Hours: </h6>
-                    <h7>Monday, Tuesday, Thursday 8:00am – 5:00pm<br>
-                        Wednesday 8:00am – 9:00pm<br>
-                        Friday 8:00am – 1:00pm</h7><br><br>
-                        <center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2804.086706021798!2d-75.81184591747557!3d45.347061966674104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce00c346f3dce9%3A0xf761d6bf38327164!2sTrillium%20Dental%20-%20Bayshore%20Mall!5e0!3m2!1sen!2sca!4v1686181717916!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center>
-                </div>
-            </article>
-        </div>
-        <div class="col-md-4">
-            <article class="blog-post">
-                <div class="content">
-                    <h4><center>Downtown Ottawa</center></h4>
-                    <h6>Address: </h6>
-                    <h7>Minto Place, 407 Laurier Ave West<br>
-                        Ottawa, Ontario K1R 7Y7</h7><br><br>
-                    <h6>Reach us at: </h6>
-                    <h7>Phone: (613) 233-4885<br>
-                        Email: downtown@trilliumdental.ca</h7><br><br>
-                    <h6>Hours: </h6>
-                    <h7>Monday, Tuesday, Thursday 7:30am – 4:30pm<br>
-                        Wednesday 7:30am – 5:30pm<br>
-                        Friday 7:30am – 1:00pm</h7><br><br>
-                        <center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.5986550906778!2d-75.7051415246003!3d45.41743223655926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce04539e92a283%3A0xd54ae634129ace22!2sTrillium%20Dental!5e0!3m2!1sen!2sca!4v1686181764421!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center>
-                </div>
-            </article>
         </div>
     </section>
+
+
+
+    <section id="services" class="text-center">
+        <div class="container">
+            <!-- Section Heading -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="intro">
+                        <h1>Our Services</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="face">Face</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="upper-body">Upper Body</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="lower-body">Lower Body</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Cards -->
+            <div class="row g-4" id="serviceCards">
+                <!-- Each card must have data-category -->
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/general.png" alt="">
+                        <h5>Sideburns</h5>
+                        <h6>Price: $74</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/cosmetic.png" alt="">
+                        <h5>Cheeks</h5>
+                        <h6>Price: $74</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <!-- Add more cards with appropriate data-category -->
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/restorative.png" alt="">
+                        <h5>Full Face</h5>
+                        <h6>Price: $209</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/restorative.png" alt="">
+                        <h5>Full face and neck</h5>
+                        <h6>Price: $259</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                    <div class="service">
+                        <img src="img/restorative.png" alt="">
+                        <h5>Neck</h5>
+                        <h6>Price: $84</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/restorative.png" alt="">
+                        <h5>Unibrows</h5>
+                        <h6>Price: $84</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/restorative.png" alt="">
+                        <h5>Chin</h5>
+                        <h6>Price: $74</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/restorative.png" alt="">
+                        <h5>Beardline</h5>
+                        <h6>Price: $74</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <!-- Example lower body (add more as needed) -->
+                <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
+                    <div class="service">
+                        <img src="img/restorative.png" alt="">
+                        <h5>Legs</h5>
+                        <h6>Price: $150</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section id="experts">
         <div class="container">
