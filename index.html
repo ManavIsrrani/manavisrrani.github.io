@@ -110,6 +110,20 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </nav>
 
+    <div class="owl-theme owl-carousel reviews-slider">
+        <div class="review">
+            <img src="img/discount4.png" alt="Review Image 1" class="review-image">
+        </div>
+        <div class="review">
+            <img src="img/discount1.png" alt="Review Image 2" class="review-image">
+        </div>
+        <div class="review">
+            <img src="img/discount2.png" alt="Review Image 3" class="review-image">
+        </div>
+        <div class="review">
+            <img src="img/discount3.png" alt="Review Image 4" class="review-image">
+        </div>
+    </div>
     
         <div class="slide slide2">
             <div class="container">
@@ -127,9 +141,9 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
 
     <!-- ABOUT -->
-    <section id="about">
+    <section id="about" class="bg-light py-5">
         <div class="container">
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col-12">
                     <div class="intro text-center">
                         <h1>About Us</h1>
@@ -137,25 +151,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="info-box">
-                                <div class="ms-4">
-                                    <p>At Advanced Laser Clinic, we specialize exclusively in advanced laser hair removal  because smooth, radiant skin is more than a luxury; it’s a lifestyle. Located in the heart of Saskatoon, our clinic is committed to providing safe, effective, and virtually painless hair removal using the latest Soprano ICE  Diode Laser Technology, suitable for all skin types.
-                                        Our mission is to help you feel confident in your skin through personalized, professional care. Whether you're looking for a long-term solution to unwanted hair or simply want to treat yourself to a brighter, cleaner look, our certified technicians are here to guide you every step of the way.
-                                        We proudly serve women, men, couples, and seniors, with tailored packages to suit your needs. At Advanced Laser Clinic, we don’t just remove hair—we help you reveal your best self.</p>
-                                </div>
-                            </div>
+                <div class="col-lg-10">
+                    <div class="about-box d-flex flex-column flex-md-row shadow p-4 bg-white rounded">
+                        <!-- Text Content -->
+                        <div class="about-text pe-md-4 mb-4 mb-md-0" style="flex: 1;">
+                            <p>
+                                At Advanced Laser Clinic, we specialize exclusively in advanced laser hair removal because smooth, radiant skin is more than a luxury; it’s a lifestyle. Located in the heart of Saskatoon, our clinic is committed to providing safe, effective, and virtually painless hair removal using the latest Soprano ICE Diode Laser Technology, suitable for all skin types.
+                            </p>
+                            <p>
+                                Our mission is to help you feel confident in your skin through personalized, professional care. Whether you're looking for a long-term solution to unwanted hair or simply want to treat yourself to a brighter, cleaner look, our certified technicians are here to guide you every step of the way.
+                            </p>
+                            <p>
+                                We proudly serve women, men, couples, and seniors, with tailored packages to suit your needs. At Advanced Laser Clinic, we don’t just remove hair—we help you reveal your best self.
+                            </p>
+                        </div>
+
+                        <!-- Video -->
+                        <div class="about-video" style="flex: 1;">
+                            <iframe class="w-100 h-100 rounded" style="min-height: 300px;" 
+                                src="https://www.youtube.com/embed/2r-1POLnMA0?si=Zy9_wD41dn0TBQsX"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-5">
-                    <iframe class="video" src="https://www.youtube.com/embed/2r-1POLnMA0?si=Zy9_wD41dn0TBQsX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
+
 
     <section class="bg-light" id="locations">
         <div class="container">
@@ -167,31 +192,38 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <article class="blog-post">
-                        <div class="content">
+                <div class="col-lg-10">
+                    <div class="location-box d-flex flex-column flex-md-row shadow p-4 bg-white rounded">
+                        <!-- Left: Text Info -->
+                        <div class="location-info pe-md-4 mb-4 mb-md-0" style="flex: 1;">
                             <h4 class="text-center">Saskatoon</h4>
-                            <h6>Address:</h6>
-                            <p>310 Wall St<br>
-                                Saskatoon, SK, S7K 1N7</p><br>
-                            <h6>Reach us at:</h6>
-                            <p>Phone: 306-612-1489<br>
-                                Email: advancedlaserc.sk@gmail.com</p><br>
-                            <h6>Hours:</h6>
+                            <h6><strong>Address:</strong></h6>
+                            <p>310 Wall St<br>Saskatoon, SK, S7K 1N7</p>
+
+                            <h6><strong>Reach us at:</strong></h6>
+                            <p>Phone: 306-612-1489<br>Email: advancedlaserc.sk@gmail.com</p>
+
+                            <h6><strong>Hours:</strong></h6>
                             <p>
                                 Monday, Tuesday, Thursday: 8:00am – 5:00pm<br>
                                 Wednesday: 8:00am – 9:00pm<br>
                                 Friday: 8:00am – 1:00pm
-                            </p><br>
-                            <div class="text-center">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.0777994993337!2d-106.67094518709801!3d52.1329062718454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5304f6d90219c3bb%3A0x13724702f94a4f9e!2s310%20Wall%20St%2C%20Saskatoon%2C%20SK%20S7K%201N7!5e0!3m2!1sen!2sca!4v1751047693037!5m2!1sen!2sca" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
+                            </p>
                         </div>
-                    </article>
+
+                        <!-- Right: Google Map -->
+                        <div class="location-map" style="flex: 1;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.0777994993337!2d-106.67094518709801!3d52.1329062718454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5304f6d90219c3bb%3A0x13724702f94a4f9e!2s310%20Wall%20St%2C%20Saskatoon%2C%20SK%20S7K%201N7!5e0!3m2!1sen!2sca!4v1751047693037!5m2!1sen!2sca"
+                                width="100%" height="100%" style="border:0; min-height: 300px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
 
 
@@ -210,17 +242,15 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="row mb-4">
                 <div class="col-12">
                     <div class="btn-group" role="group">
-                        <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
-                        <button class="btn btn-outline-primary filter-btn" data-filter="face">Face</button>
+                        <button class="btn btn-outline-primary filter-btn active" data-filter="all">All services</button>
+                        <button class="btn btn-outline-primary filter-btn " data-filter="face">Face</button>
                         <button class="btn btn-outline-primary filter-btn" data-filter="upper-body">Upper Body</button>
                         <button class="btn btn-outline-primary filter-btn" data-filter="lower-body">Lower Body</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Service Cards -->
             <div class="row g-4" id="serviceCards">
-                <!-- Each card must have data-category -->
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
                         <img src="img/general.png" alt="">
@@ -239,7 +269,60 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
 
-                <!-- Add more cards with appropriate data-category -->
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/cosmetic.png" alt="">
+                        <h5>Upper Lip</h5>
+                        <h6>Price: $74</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/restorative.png" alt="">
+                        <h5>Chin</h5>
+                        <h6>Price: $74</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/cosmetic.png" alt="">
+                        <h5>Upper Lip & Chin</h5>
+                        <h6>Price: $104</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/cosmetic.png" alt="">
+                        <h5>Cheeks & Sideburns</h5>
+                        <h6>Price: $114</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/restorative.png" alt="">
+                        <h5>Beardline</h5>
+                        <h6>Price: $74</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 service-card" data-category="face">
+                    <div class="service">
+                        <img src="img/restorative.png" alt="">
+                        <h5>Neck</h5>
+                        <h6>Price: $84</h6><br>
+                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                    </div>
+                </div>
+
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
                         <img src="img/restorative.png" alt="">
@@ -258,15 +341,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
-                    <div class="service">
-                        <img src="img/restorative.png" alt="">
-                        <h5>Neck</h5>
-                        <h6>Price: $84</h6><br>
-                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
-                    </div>
-                </div>
-
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
                         <img src="img/restorative.png" alt="">
@@ -279,29 +353,227 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
                         <img src="img/restorative.png" alt="">
-                        <h5>Chin</h5>
-                        <h6>Price: $74</h6><br>
+                        <h5>Ears</h5>
+                        <h6>Price: $84</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6 service-card" data-category="face">
-                    <div class="service">
-                        <img src="img/restorative.png" alt="">
-                        <h5>Beardline</h5>
-                        <h6>Price: $74</h6><br>
-                        <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
-                    </div>
-                </div>
-
+                
                 <!-- Example lower body (add more as needed) -->
                 <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
                     <div class="service">
                         <img src="img/restorative.png" alt="">
-                        <h5>Legs</h5>
-                        <h6>Price: $150</h6><br>
+                        <h5>Bikini Line</h5>
+                        <h6>Price: $119</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
                     </div>
+                </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Brazilian</h5>
+                            <h6>Price: $199</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Brazilian & Buttline</h5>
+                            <h6>Price: $259</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Brazilian (Men)</h5>
+                            <h6>Price: $249</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Buttocks</h5>
+                            <h6>Price: $159</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Upper Legs</h5>
+                            <h6>Price: $199</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Lower Legs</h5>
+                            <h6>Price: $189</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Full Legs</h5>
+                            <h6>Price: $359</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Feet & Toes</h5>
+                            <h6>Price: $84</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Linea</h5>
+                            <h6>Price: $74</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Hands</h5>
+                            <h6>Price: $84</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Underarms</h5>
+                            <h6>Price: $94</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Upper Arms</h5>
+                            <h6>Price: $144</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Lower Arms</h5>
+                            <h6>Price: $164</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Full Arms</h5>
+                            <h6>Price: $269</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Full Arms & Hands</h5>
+                            <h6>Price: $309</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Chest</h5>
+                            <h6>Price: $184</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Areola</h5>
+                            <h6>Price: $84</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Abdomen</h5>
+                            <h6>Price: $184</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Chest + Abdomen</h5>
+                            <h6>Price: $349</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Shoulders</h5>
+                            <h6>Price: $164</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Half Back</h5>
+                            <h6>Price: $169</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Full Back</h5>
+                            <h6>Price: $304</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
+                        <div class="service">
+                            <img src="img/restorative.png" alt="">
+                            <h5>Full Back + Shoulders</h5>
+                            <h6>Price: $409</h6><br>
+                            <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -354,39 +626,15 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </section>
 
-    <section class="bg-light" id="reviews">
+    
 
-        <div class="owl-theme owl-carousel reviews-slider container">
-            <div class="review">
-                <div class="person">
-                    <img src="img/pat2.jpeg" alt="">
-                    <h5>Jessica Alexander</h5>
-                </div>
-                <h3>Dr. O'Connor, my dentist, was highly professional and knowledgeable. She took the time to listen to my concerns and provided me with a detailed explanation of the treatment options available. The procedure itself was painless and comfortable, thanks to their gentle approach and skillful hands.</h3>
-            </div>
-            <div class="review">
-                <div class="person">
-                    <img src="img/pat1.jpeg" alt="">
-                    <h5>Kim Aubin</h5>
-                </div>
-                <h3>The clinic is modern, clean, and well-maintained. The atmosphere is calming, and the use of advanced technology further showcases their commitment to providing top-notch dental care.</h3>
-            </div>
-            <div class="review">
-                <div class="person">
-                    <img src="img/pat3.jpg" alt="">
-                    <h5>Toby Brown</h5>
-                </div>
-                <h3>I recently had the pleasure of visiting Trillium Dental Clinic, and I must say it was a five-star experience from start to finish. The staff at the clinic are friendly, welcoming, and highly professional. They made me feel comfortable and ensured that I had a positive experience.</h3>
-            </div>
-        </div>
-    </section>
 
     <footer>
         <div class="footer-top text-center">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <img src="img/logo-large.png" class = "footer-image" ><br><br>
+                        <img src="img/logo-bg.png" class = "footer-image" ><br><br>
                         <div class="col-auto social-icons">
                             <a href="#"><i class='bx bxl-facebook'></i></a>
                             <a href="#"><i class='bx bxl-twitter'></i></a>

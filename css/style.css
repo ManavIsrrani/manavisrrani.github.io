@@ -198,6 +198,7 @@ text-align: center;}
 .info-box {
     align-items: center;
     display: flex;
+    text-align: justify;
 }
 
 .info-box img {
@@ -261,7 +262,7 @@ text-align: center;}
 
 #reviews {
 
-    background: linear-gradient(-90deg, rgba(8, 32, 50, 0.8), rgba(8, 32, 50, 0.8)), url(../img/bg_banner1.jpg), #082032;;
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../img/bg_banner1.jpg), #082032;;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -272,7 +273,8 @@ text-align: center;}
     z-index: 2;
     position: relative;
     margin: 15px;
-    max-width: 768px;
+    max-width: 100%;
+    height: auto;
     margin: auto;
 }
 
@@ -287,11 +289,13 @@ text-align: center;}
 }
 
 .review img {
-    width: 80px !important;
-    height: 80px;
-    border-radius: 100px;
-    margin: auto;
+    width: 100%;
+    max-height: 400px; /* adjust this to control banner height */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
+
 
 .review h5 {
     margin-top: 16px;
@@ -343,7 +347,7 @@ text-align: center;}
 }
 
 footer {
-    background: linear-gradient(0deg, rgba(8, 32, 50, 0.9), rgba(8, 32, 50, 0.9)), url(../img/back3.webp), #082032;;
+    background: var(--brand);;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -397,8 +401,8 @@ input.form-control {
 }
 
 iframe{
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 375px;
 }
 
 .navbar-logo{
@@ -572,11 +576,74 @@ iframe{
 }
 
 .video {
-    width: 100%;
+    width: 1600px;
     height: auto;
     aspect-ratio: 16 / 9;
     max-width: 100%;
     border: none;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
+
+#reviews .review {
+    position: relative;
+    overflow: hidden;
+}
+
+.review-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow, 0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.promotions {
+    padding: 40px 0;
+    background-color: #f8f9fa; /* or any background you'd like */
+}
+
+
+.location-box {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.location-info {
+    font-size: 1rem;
+}
+
+.location-map iframe {
+    border-radius: 8px;
+}
+
+
+.about-box,
+.location-box {
+    background: linear-gradient(135deg, #ffffff, #f5f7fa);
+    color: #1a1a1a; /* dark text for readability */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-box p,
+.location-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about-box h4,
+.location-box h4,
+.about-box h6,
+.location-box h6 {
+    color: #111;
+    font-weight: 600;
+    margin-top: 1rem;
+}
