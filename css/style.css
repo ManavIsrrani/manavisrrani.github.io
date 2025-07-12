@@ -3,7 +3,7 @@
 :root {
     --brand: #4f7f71;
     --dark: #092032;
-    --body: #516171;
+    --body: black;
     --border: rgba(0,0,0,0.08);
     --shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
     
@@ -169,12 +169,6 @@ section {
 .btn-brand {
     border-color: var(--brand);
     background-color: var(--brand);
-    color: #fff;
-}
-
-.btn-brand:hover {
-    background-color: #d64022;
-    border-color: #d64022;
     color: #fff;
 }
 
@@ -636,7 +630,8 @@ iframe{
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
-    color: #333;
+    color: #000000;
+    text-align: justify;
 }
 
 .about-box h4,
@@ -646,4 +641,70 @@ iframe{
     color: #111;
     font-weight: 600;
     margin-top: 1rem;
+}
+
+
+.feedback-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.section-heading {
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+.feedback-carousel {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feedback-card {
+  background-color: #eeeeee;
+  padding: 30px;
+  max-width: 350px;
+  min-height: 250px;
+  border-radius: 4px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feedback-text {
+  font-style: italic;
+  font-family: "Work Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: #444;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.feedback-name {
+  font-weight: bold;
+  color: #111;
+}
+
+.carousel-nav {
+  margin-top: 30px;
+}
+
+.arrow-btn {
+  font-size: 1.5rem;
+  padding: 8px 16px;
+  margin: 0 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111;
+  transition: color 0.2s ease;
+}
+
+.arrow-btn:hover {
+  color: #44745e;
 }

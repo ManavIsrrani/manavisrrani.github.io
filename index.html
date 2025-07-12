@@ -18,30 +18,33 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const serviceCards = document.querySelectorAll('.service-card');
+    const serviceCards = document.querySelectorAll(".service-card");
+
+    serviceCards.forEach(card => {
+        if (card.dataset.category !== "face") {
+            card.style.display = "none";
+        } else {
+            card.style.display = "block";
+        }
+    });
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
 
     filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Toggle active class
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+        btn.addEventListener("click", function () {
+            const filter = this.getAttribute("data-filter");
 
-            const selectedFilter = btn.getAttribute('data-filter');
+            filterButtons.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
 
             serviceCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-
-                if (selectedFilter === "all" || category === selectedFilter) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
+                card.style.display = (filter === card.dataset.category) ? "block" : "none";
             });
         });
     });
 });
 </script>
+
 
 
 
@@ -54,12 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="row justify-content-between">
                 <div class="col-auto">
                     <p> <a href="#" class = "top-link"><i class='bx bxs-envelope'></i> advancedlaserc.sk@gmail.com</p></a>
-                    <p> <a href="#" class = "top-link"><i class='bx bxs-phone-call'></i> 306-612-1489</p></a>
+                    <p> <a href="#" class = "top-link"><i class='bx bxs-phone-call'></i> 693-398-5456</p></a>
                 </div>
                 <div class="col-auto social-icons">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://www.facebook.com/share/18SgEqovDF/?mibextid=wwXIfr"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com/advlaseryxe?igsh=YXV5dmkweWg4aTJi"><i class='bx bxl-instagram'></i></a>
                 </div>
             </div>
         </div>
@@ -73,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -98,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var target = document.currentScript;
                 window.addEventListener('load', function() {
                     calendar.schedulingButton.load({
-                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0sX3yikkWYm-XY6_OKuHoAitlV870uMWwu8n3hixi-G2WRWywjLLfIjI8B0zpleN2UgEenMnAl?gv=true',
+                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3xpmN7VaeokEqzynVDeySCV4cB1kIwudHEeAfGNr7sx0zYtlmKd3H12Clapj6XxKM5JMxcaNhx?gv=true',
                     color: '#4f7f71',
                     label: 'Book an appointment',
                     target,
@@ -106,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
                 })();
                 </script>
+                
             </div>
         </div>
     </nav>
@@ -132,7 +136,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         <h1 class="display-3 my-4">Advanced Laser Clinik</h1>
                         <h6 class="text-white text-uppercase">Advanced Technology, Trusted Results</h6>
                         
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-brand">Request Appointment</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrP1HLEfBMOBP7o_QPEtp9SC4Oge0r3WoA7jJJlxnDSPGacw/viewform" 
+                            target="_blank" 
+                            class="btn btn-brand">
+                            Contact Us
+                        </a>
                         <a href="#services" class="btn btn-outline-light ms-3">Our Services</a>
                     </div>
                 </div>
@@ -141,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
 
     <!-- ABOUT -->
-    <section id="about" class="bg-light py-5">
+    <section id="about" class="about-container py-5">
         <div class="container">
             <div class="row mb-4">
                 <div class="col-12">
@@ -181,6 +189,24 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </section>
 
+    <section class="feedback-section">
+    <h2 class="section-heading">Customer Reviews</h2>
+    <div class="feedback-carousel">
+        <div class="feedback-card">
+        <p class="feedback-text">“I have had my 3 sittings so far, and you could see the results are really good. She is really professional and have in-depth knowledge about what she’s doing. She makes an individual feel really comfortable and listens and understands concerns if any. I even had to reschedule my appointment last time, and the team was super chill about it❤️”</p>
+        <p class="feedback-name">Gurpreet Kaur</p>
+        </div>
+        <div class="feedback-card">
+        <p class="feedback-text">“Had a great experience as usual. i have been using their services for past two years. Recommend everyone.”</p>
+        <p class="feedback-name">Priya Sharma</p>
+        </div>
+        <div class="feedback-card">
+        <p class="feedback-text">“Super nice and friendly, not awkward at all unlike some places”</p>
+        <p class="feedback-name">Morgana Scully</p>
+        </div>
+    </div>
+    </section>
+
 
     <section class="bg-light" id="locations">
         <div class="container">
@@ -201,13 +227,17 @@ document.addEventListener("DOMContentLoaded", function () {
                             <p>310 Wall St<br>Saskatoon, SK, S7K 1N7</p>
 
                             <h6><strong>Reach us at:</strong></h6>
-                            <p>Phone: 306-612-1489<br>Email: advancedlaserc.sk@gmail.com</p>
+                            <p>Phone: 693-398-5456<br>Email: advancedlaserc.sk@gmail.com</p>
 
                             <h6><strong>Hours:</strong></h6>
                             <p>
-                                Monday, Tuesday, Thursday: 8:00am – 5:00pm<br>
-                                Wednesday: 8:00am – 9:00pm<br>
-                                Friday: 8:00am – 1:00pm
+                                Monday: 10:00am – 6:00pm<br>
+                                Tuesday: 10:00am – 6:00pm<br>
+                                Wednesday: 10:00am – 6:00pm<br>
+                                Thursday: 10:00am – 6:00pm<br>
+                                Friday: 10:00am – 6:00pm<br>
+                                Saturday: 10:00am – 4:00pm<br>
+                                Sunday: Closed<br>
                             </p>
                         </div>
 
@@ -223,13 +253,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </section>
 
-
-
-
-
+    <!-- Services -->  
     <section id="services" class="text-center">
         <div class="container">
-            <!-- Section Heading -->
             <div class="row">
                 <div class="col-12">
                     <div class="intro">
@@ -238,12 +264,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             </div>
 
-            <!-- Category Filters -->
             <div class="row mb-4">
                 <div class="col-12">
                     <div class="btn-group" role="group">
-                        <button class="btn btn-outline-primary filter-btn active" data-filter="all">All services</button>
-                        <button class="btn btn-outline-primary filter-btn " data-filter="face">Face</button>
+                        <button class="btn btn-outline-primary filter-btn active" data-filter="face">Face</button>
                         <button class="btn btn-outline-primary filter-btn" data-filter="upper-body">Upper Body</button>
                         <button class="btn btn-outline-primary filter-btn" data-filter="lower-body">Lower Body</button>
                     </div>
@@ -253,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="row g-4" id="serviceCards">
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/general.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Sideburns</h5>
                         <h6>Price: $74</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -262,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/cosmetic.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Cheeks</h5>
                         <h6>Price: $74</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -271,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/cosmetic.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Upper Lip</h5>
                         <h6>Price: $74</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -280,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/restorative.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Chin</h5>
                         <h6>Price: $74</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -289,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/cosmetic.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Upper Lip & Chin</h5>
                         <h6>Price: $104</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -298,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/cosmetic.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Cheeks & Sideburns</h5>
                         <h6>Price: $114</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -307,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/restorative.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Beardline</h5>
                         <h6>Price: $74</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -316,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/restorative.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Neck</h5>
                         <h6>Price: $84</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -325,7 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/restorative.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Full Face</h5>
                         <h6>Price: $209</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -334,7 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/restorative.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Full face and neck</h5>
                         <h6>Price: $259</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -343,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/restorative.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Unibrows</h5>
                         <h6>Price: $84</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -352,17 +376,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="col-lg-4 col-md-6 service-card" data-category="face">
                     <div class="service">
-                        <img src="img/restorative.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Ears</h5>
                         <h6>Price: $84</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
                     </div>
                 </div>
                 
-                <!-- Example lower body (add more as needed) -->
                 <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
                     <div class="service">
-                        <img src="img/restorative.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <h5>Bikini Line</h5>
                         <h6>Price: $119</h6><br>
                         <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -371,7 +394,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Brazilian</h5>
                             <h6>Price: $199</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -379,7 +402,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                     <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Brazilian & Buttline</h5>
                             <h6>Price: $259</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -387,7 +410,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                     <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Brazilian (Men)</h5>
                             <h6>Price: $249</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -396,7 +419,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     
                     <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Buttocks</h5>
                             <h6>Price: $159</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -405,7 +428,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Upper Legs</h5>
                             <h6>Price: $199</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -414,7 +437,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Lower Legs</h5>
                             <h6>Price: $189</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -423,7 +446,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Full Legs</h5>
                             <h6>Price: $359</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -432,7 +455,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="lower-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Feet & Toes</h5>
                             <h6>Price: $84</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -441,7 +464,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Linea</h5>
                             <h6>Price: $74</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -450,7 +473,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Hands</h5>
                             <h6>Price: $84</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -459,7 +482,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Underarms</h5>
                             <h6>Price: $94</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -468,7 +491,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Upper Arms</h5>
                             <h6>Price: $144</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -477,7 +500,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Lower Arms</h5>
                             <h6>Price: $164</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -486,7 +509,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Full Arms</h5>
                             <h6>Price: $269</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -495,7 +518,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Full Arms & Hands</h5>
                             <h6>Price: $309</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -504,7 +527,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Chest</h5>
                             <h6>Price: $184</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -513,7 +536,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Areola</h5>
                             <h6>Price: $84</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -522,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Abdomen</h5>
                             <h6>Price: $184</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -531,7 +554,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Chest + Abdomen</h5>
                             <h6>Price: $349</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -540,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Shoulders</h5>
                             <h6>Price: $164</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -549,7 +572,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Half Back</h5>
                             <h6>Price: $169</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -558,7 +581,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Full Back</h5>
                             <h6>Price: $304</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -567,7 +590,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="col-lg-4 col-md-6 service-card" data-category="upper-body">
                         <div class="service">
-                            <img src="img/restorative.png" alt="">
+                            <img src="img/cart.png" alt="">
                             <h5>Full Back + Shoulders</h5>
                             <h6>Price: $409</h6><br>
                             <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Book an appointment</a>
@@ -579,71 +602,72 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </section>
 
-
-    <section id="experts">
+    <!-- FAQs -->  
+    <section id="faq" class="py-5" style="background-color: #f5f5f5;">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="intro">
-                        <h1>Our Experts</h1>
-                        <h5>Meet Our Dentists</h5>
-                    </div>
+            <div class="text-center mb-5">
+            <h2 class="fw-bold">Frequently Asked Questions</h2>
+            </div>
+            <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                    Why is our advanced laser hair removal technology better than IPL? 
+                </button>
+                </h2>
+                <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    1. Soprano ICE uses advanced diode laser technology, which targets hair follicles more precisely and effectively than traditional IPL <br>
+                    2. Safe for All Skin Tones – Unlike IPL, Soprano ICE is clinically proven to be safe for both light and dark skin, including tanned skin. <br>
+                    3. Virtually Painless – Thanks to its patented ICE™ cooling technology, treatments are comfortable and feel like a warm massage. <br>
+                    4. Fewer Sessions Needed – Soprano ICE delivers better and faster results with fewer treatments. <br>
+                    5. No Downtime – It’s gentle on the skin, meaning you can return to your normal activities immediately. <br>
+                    6. More Effective – It uses a specific wavelength that penetrates deeper and permanently reduces unwanted hair more consistently than IPL. <br>
+                </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-8">
-                    <div class="team-member">
-                        <div class="image">
-                            <img src="img/doc1.png" alt="">
-                        </div>
 
-                        <h5>Dr. Aisling O'Connor</h5>
-                        <h7>Dr. O’Connor graduated with a Bachelor of Dental Science from Trinity College Dublin. After her studies she gained invaluable experience working in a busy dental practice in Ireland. As a dentist, she loves seeing patients leave the practice with a healthier smile and boost in confidence from their treatment.</h7>
-
-                    </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                    How many sessions do I need? 
+                </button>
+                </h2>
+                <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Based upon your skin type, hair growth, hair colour and thickness of hair – we balance the frequency and wavelength of the laser to give you best results. Typically, 6 to 8 sessions are recommended for best results.
                 </div>
-                <div class="col-lg-4 col-md-8">
-                    <div class="team-member">
-                        <div class="image">
-                            <img src="img/doc2.png" alt="">
-                        </div>
-
-                        <h5>Dr. Demetrius Dalios</h5>
-                        <h7>Dr. Dalios grew up in southwestern Ontario. He attended the University of Western Ontario where he first completed his Honours Bachelor of Science degree in Physiology in 2001 before earning his D.D.S. degree [Doctor of Dental Surgery] in 2005.</h7>
-                    </div>
                 </div>
-                <div class="col-lg-4 col-md-8">
-                    <div class="team-member">
-                        <div class="image">
-                            <img src="img/doc3.png" alt="">
-                        </div>
+            </div>
 
-                        <h5>Dr. Ashish Sharma</h5>
-                        <h7>Dr. Ashish is an experienced dentist offering a full scope of general and preventive care to patients. He is committed to restoring optimum oral health, and enhancing the natural beauty of every patient’s smile.</h7>
-                    </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                    Can Soprano ICE be used in the summer and can it treat tanned skin?
+                </button>
+                </h2>
+                <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes. Soprano ICE’s SHR method affects the melanin of the skin using a unique method, allowing the procedure to be performed anytime of the year as well as on tanned skin. Furthermore, sun exposure is less traumatic to the skin following SHR treatment.
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+    <!-- Footer -->     
+    <footer class="footer" style="background: url('img/footer.png') no-repeat center center; background-size: cover; height: 300px; position: relative;">
+        <div class="container h-100">
+            <div class="d-flex align-items-end justify-content-center h-100">
+                <div class="social-icons mb-3" style="margin-left: -120px;">
+                    <a href="https://www.facebook.com/share/18SgEqovDF/?mibextid=wwXIfr"><i class='bx bxl-facebook' style="color: white; font-size: 24px; margin: 0 10px;"></i></a>
+                    <a href="https://www.instagram.com/advlaseryxe?igsh=YXV5dmkweWg4aTJi"><i class='bx bxl-instagram' style="color: white; font-size: 24px; margin: 0 10px;"></i></a>
+                    <br>
+                    <br>
                 </div>
             </div>
         </div>
-    </section>
-
-    
-
-
-    <footer>
-        <div class="footer-top text-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <img src="img/logo-bg.png" class = "footer-image" ><br><br>
-                        <div class="col-auto social-icons">
-                            <a href="#"><i class='bx bxl-facebook'></i></a>
-                            <a href="#"><i class='bx bxl-twitter'></i></a>
-                            <a href="#"><i class='bx bxl-instagram'></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
     </footer>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -718,6 +742,10 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         </div>
     </div>
+
+    
+
+
 
 
 
